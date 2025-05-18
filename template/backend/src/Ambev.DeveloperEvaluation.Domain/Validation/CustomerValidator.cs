@@ -21,6 +21,9 @@ namespace Ambev.DeveloperEvaluation.Domain.Validation
                 .NotEmpty()
                 .MaximumLength(250).WithMessage("Address cannot be longer than 250 characters.");
 
+            RuleFor(customer => customer.NumberAdrress)
+                .MaximumLength(50).WithMessage("NumberAdrress cannot be longer than 50 characters.");
+
             RuleFor(customer => customer.Phone)
                 .Matches(@"^\+[1-9]\d{10,14}$")
                 .WithMessage("Phone number must start with '+' followed by 11-15 digits.");
@@ -31,7 +34,6 @@ namespace Ambev.DeveloperEvaluation.Domain.Validation
             RuleFor(customer => customer.Status)
                 .NotEqual(CustomerStatus.Unknown)
                 .WithMessage("Customer status cannot be Unknown.");
-
         }
     }
 }
