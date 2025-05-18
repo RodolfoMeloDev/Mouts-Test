@@ -1,11 +1,6 @@
 ﻿using Ambev.DeveloperEvaluation.Domain.Entities;
 using Ambev.DeveloperEvaluation.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ambev.DeveloperEvaluation.ORM.Repositories
 {
@@ -57,6 +52,11 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
         public async Task<Product?> GetByNameAsync(string name, CancellationToken cancellationToken = default)
         {
             return await _context.Products.FirstOrDefaultAsync(o => o.ProductName.Equals(name), cancellationToken);
+        }
+
+        public async Task<IEnumerable<Product>?> GetByListIdAsync(IEnumerable<int> listId, CancellationToken cancellationToken)
+        {
+            return await _context.Products.Where(f => listId.Contains(f.Id)).ToListAsync();
         }
     }
 }

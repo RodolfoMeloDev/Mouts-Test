@@ -12,6 +12,8 @@ namespace Ambev.DeveloperEvaluation.Domain.Repositories
 
         Task<Product?> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 
+        Task<IEnumerable<Product>?> GetByListIdAsync(IEnumerable<int> listId, CancellationToken cancellationToken = default);
+
         Task<bool> DeleteAsync(int id, CancellationToken cancellationToken = default);
     }
 }
