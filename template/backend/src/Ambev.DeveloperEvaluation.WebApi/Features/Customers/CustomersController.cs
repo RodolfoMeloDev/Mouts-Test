@@ -89,7 +89,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Customers
             return Ok(new ApiResponseWithData<GetCustomerResponse>
             {
                 Success = true,
-                Message = "User retrieved successfully",
+                Message = "Customer retrieved successfully",
                 Data = _mapper.Map<GetCustomerResponse>(response)
             });
         }
