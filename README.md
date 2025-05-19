@@ -2,6 +2,11 @@
 
 `READ CAREFULLY`
 
+## Como executar
+Deve ser executado o docker compose que está no projeto.
+Foi realizado o cadstro para Customer e Product. É necessário registar dados para poder realizar o pedido.
+
+
 ## Instructions
 **The test below will have up to 7 calendar days to be delivered from the date of receipt of this manual.**
 
